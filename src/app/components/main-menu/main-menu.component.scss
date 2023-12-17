@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+    height: 82vh;
+    overflow: auto;
+
+    .cards {
+        flex: 1;
+        background-color: #fff;
+        border-radius: 14px;
+        padding: 10px;
+        min-height: 150vh;
+    }
+
+    .main-content {
+        flex: 4;
+    }
+}

@@ -1,0 +1,77 @@
+<div class="total-cards">
+    <span class="cards-text">My Cards: {{availableCards}}/{{totalCards}}</span>
+    <div class="logo-content">
+        <img class="logo" src="assets/images/left.svg" alt="Left">
+        <img class="logo" src="assets/images/right.svg" alt="Right">
+    </div>
+
+</div>
+
+
+<div class="credit-card">
+    <div class="chip"></div>
+    <img class="logo-1" src="assets/images/masterCard.png" alt="Logo">
+    <div class="card-number">1234 5678 9012 3456</div>
+    <div class="card-holder">John Doe</div>
+    <div class="expires">Expires: 12/23</div>
+</div>
+
+
+<div class="addData">
+    <img class="addCircle" src="assets/images/add_circle.svg" alt="Add Data">
+    <span class="payment">Add new Card</span>
+</div>
+
+<div class="quick-actions">
+    <h4>Quick Actions</h4>
+    <div class="main-content">
+        <div class="action">
+            <img src="assets/images/plus.svg" alt="TopUp">
+            <span>Top Up</span>
+        </div>
+        <div class="action">
+            <img src="assets/images/transfer.svg" alt="Transfer">
+            <span>Transfer</span>
+        </div>
+        <div class="action">
+            <img src="assets/images/withdrawl.svg" alt="Withdrawl">
+            <span>Withdrawl</span>
+        </div>
+    </div>
+</div>
+
+<div class="savings">
+    <div class="savings-top-content">
+        <h4>Savings Plan</h4>
+        <img src="assets/images/plus.svg" alt="Add Data">
+    </div>
+</div>
+
+<ng-container *ngFor="let item of cardData">
+    <div class="json-content">
+        <div class="json-1">
+            <div class="json-image">
+                <img src="{{item.image}}" alt="">
+            </div>
+            <div class="json-title">
+                <h6>{{item.name}}</h6>
+                <span>Target: ${{item.max_price}}</span>
+            </div>
+            <div class="more">
+                <img src="assets/images/more.svg" alt="More">
+            </div>
+        </div>
+        <div class="json-2">
+            <div class="sum-values">
+                <span>Total: ${{item.sale_price}}</span>
+                {{calculateProgressPercentage(item.sale_price, item.max_price)}}%
+            </div>
+            <div class="progress-bar-container">
+                <div class="progress-bar"
+                    [style.width.%]="calculateProgressPercentage(item.sale_price, item.max_price)">
+                    {{calculateProgressPercentage(item.sale_price, item.max_price)}}%
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-container>

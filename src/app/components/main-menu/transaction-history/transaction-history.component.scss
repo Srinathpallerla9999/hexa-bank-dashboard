@@ -1,0 +1,128 @@
+.transcation-history {
+    position: relative;
+    height: 275px;
+    overflow-y: auto;
+    background-color: #fff;
+    border-radius: 20px;
+    margin: 5px;
+
+    .container-1 {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        background-color: #fff;
+
+        .main-title {
+            flex: 1;
+
+            h4 {
+                color: #2d2d5f;
+                font-weight: 700;
+            }
+        }
+
+        .actions {
+            display: flex;
+            gap: 10px;
+
+            .search {
+                input {
+                    margin: 10px 13px;
+                    padding: 5px 0px;
+                    border: 1px solid #b0b4bd;
+                    border-radius: 6px;
+                }
+            }
+
+            .filter,
+            .export {
+                display: flex;
+                align-items: center;
+                padding: 5px;
+                margin: 5px 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                cursor: pointer;
+                font-size: 12px;
+            }
+
+
+            .search img,
+            .filter img,
+            .export img {
+                margin-right: 5px;
+            }
+
+            .filter p,
+            .export p {
+                margin: 0;
+                color: #3a3a4e;
+                font-weight: 800;
+            }
+        }
+    }
+
+    .table-borderless>tbody>tr>td,
+    .table-borderless>tbody>tr>th,
+    .table-borderless>tfoot>tr>td,
+    .table-borderless>tfoot>tr>th,
+    .table-borderless>thead>tr>td,
+    .table-borderless>thead>tr>th {
+        border: none;
+    }
+}
+
+thead tr th {
+    color: #b0b4bd;
+    background-color: #f5f6f8;
+}
+
+tbody tr td {
+    font-weight: 600;
+}
+
+.success,
+.failed,
+.pending {
+    white-space: nowrap;
+    display: inline-block;
+    border-radius: 11px;
+}
+
+.success {
+    background-color: rgba(0, 255, 0, 0.3);
+    color: green;
+}
+
+.failed {
+    background-color: rgba(255, 0, 0, 0.3);
+    color: red;
+    padding: 8px 16px;
+}
+
+.pending {
+    background-color: rgba(255, 255, 0, 0.3);
+    color: rgb(116, 116, 8);
+}
+
+.modal-header {
+    background-color: #007bff;
+    color: white;
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.modal-footer {
+    background-color: #f8f9fa;
+}
+
+.row dd,
+.row dt {
+    margin-bottom: 0.5rem;
+}

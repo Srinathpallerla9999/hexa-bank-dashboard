@@ -1,0 +1,88 @@
+.money-statics-main {
+  padding: 26px 12px 0px 9px;
+  background-color: #fff;
+  border-radius: 20px;
+  margin: 5px;
+
+  .money-first-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h5 {
+      color: #2d2d5f;
+      font-weight: 700;
+    }
+
+    .money-controls {
+      display: flex;
+      align-items: center;
+
+      .dropdown-1 {
+        display: flex;
+        align-items: center;
+
+        select {
+          margin-right: 20px;
+        }
+
+        .form-select {
+          width: 110px;
+        }
+      }
+    }
+  }
+}
+
+.money-value {
+  display: flex;
+  justify-content: space-between;
+  margin: 50px;
+
+  .item-container {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+    position: relative;
+
+    .main-title {
+      font-size: 16px;
+      font-weight: bold;
+
+      span {
+        color: #cbc8cc;
+        font-size: 14px;
+      }
+    }
+
+    .value-section {
+      display: flex;
+      flex-direction: column;
+
+      h4 {
+        font-weight: 700;
+        color: #5a556f;
+        margin: 5px 0 0;
+      }
+
+      .item-value {
+        font-size: 9px;
+        font-weight: 700;
+
+        .last-text {
+          color: #cbc8cc;
+        }
+      }
+    }
+  }
+
+  .item-container:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 12px;
+    right: -84px;
+    bottom: 12px;
+    width: 2px;
+    background-color: #ccc;
+  }
+}

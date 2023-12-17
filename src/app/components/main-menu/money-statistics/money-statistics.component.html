@@ -1,0 +1,38 @@
+<div class="money-statics-main">
+  <div class="money-first-row">
+    <h5>Money Statistics</h5>
+    <div class="money-controls">
+      <div class="dropdown-1">
+        <select class="form-select" [(ngModel)]="selectTimePeriod" (change)="checkTimePeriod(selectTimePeriod)">
+          <ng-container *ngFor="let item of timePeriod">
+            <option [value]="item">{{item}}</option>
+          </ng-container>
+        </select>
+        <img src="assets/images/more.svg" alt="More">
+      </div>
+    </div>
+  </div>
+  <div class="money-value">
+    <ng-container *ngFor="let item of moneyStatictics | keyvalue">
+      <div class="item-container">
+        <div class="main-title">
+          <span>{{ item.key | textManipulation }} </span>
+        </div>
+        <div class="value-section">
+          <h4>${{ item.value.value }}</h4>
+          <div class="item-value">
+            <img src="assets/images/graph.svg" alt="Graph" />
+            <span [style.color]="item.value.trend_color"> +{{ item.value.trend }}%</span> <span class="last-text"> from
+              last month</span>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+
+  <div id="chart">
+    <apx-chart [series]="chartOptions.series" [chart]="chartOptions.chart" [dataLabels]="chartOptions.dataLabels"
+      [plotOptions]="chartOptions.plotOptions" [yaxis]="chartOptions.yaxis" [legend]="chartOptions.legend"
+      [fill]="chartOptions.fill" [stroke]="chartOptions.stroke" [tooltip]="chartOptions.tooltip"
+      [xaxis]="chartOptions.xaxis"></apx-chart>
+  </div>

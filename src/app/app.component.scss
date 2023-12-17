@@ -1,0 +1,66 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif !important;
+}
+
+.centered-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #000034;
+  padding: 5px;
+  position: sticky;
+  top: 0;
+
+  .latest-features-text {
+    margin-bottom: 10px;
+    color: #f1f1f1;
+  }
+
+  .learn-more-btn {
+    background-color: #faf5f7;
+    color: #595476;
+    padding: 10px 20px 5px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 700;
+    margin-left: 17px;
+  }
+}
+
+.container-1 {
+  display: flex;
+  height: 70vh;
+
+  .app-side-nav {
+    font-size: 11px !important;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    height: 91vh;
+    overflow-y: auto;
+    flex: 0.7;
+    width: 20%;
+    background-color: #f1f1f1;
+  }
+
+  .main-content {
+    flex: 4;
+    display: flex;
+    flex-direction: column;
+
+    app-header {
+      flex: 0 0 10vh;
+      position: sticky;
+      top: 0;
+    }
+
+    app-main-menu {
+      flex: 1;
+    }
+  }
+}

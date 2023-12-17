@@ -1,0 +1,20 @@
+<div class="total-balance">
+    <div class="t-balance-first-row">
+        <span class="head-tag">Total Balance</span>
+        <img src="assets/images/more.svg" alt="More">
+    </div>
+    <h1 class="main-title">
+        ${{totalData.total_balance}}
+    </h1>
+
+    <div class="progress-bar-container">
+        <div class="progress-bar" [style.background]="getProgressBarColor()"></div>
+        <div class="text-container">
+            <div class="left-text">Monthly Payment Limit</div>
+            <div class="right-text">
+                <span class="p-done">${{totalData.payment_done_so_far}}</span>
+                <span class="monthly-limit">/${{totalData.monthly_payment_limit}}</span>
+            </div>
+        </div>
+    </div>
+</div>

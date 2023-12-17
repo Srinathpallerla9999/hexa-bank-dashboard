@@ -1,0 +1,69 @@
+<div class="transcation-history">
+  <div class="container-1">
+    <div class="main-title">
+      <h4>Transaction History</h4>
+    </div>
+    <div class="actions">
+      <div class="search">
+        <input type="text" placeholder="  Search" [(ngModel)]="searchQuery" (input)="performSearch()">
+      </div>
+      <div class="filter">
+        <img src="assets/images/filter.svg" alt="Filter">
+        <p>Filter</p>
+      </div>
+      <div class="export">
+        <img src="assets/images/export.svg" alt="Export">
+        <p>Export</p>
+      </div>
+    </div>
+  </div>
+  <table class="table table-borderless">
+    <thead>
+      <tr>
+        <th scope="col">Date</th>
+        <th scope="col">Name</th>
+        <th scope="col">Status</th>
+        <th scope="col">Type</th>
+        <th scope="col">Time</th>
+        <th scope="col">Amount</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody class="custom-body">
+      <tr *ngFor="let transaction of filteredTransactions; let i = index">
+        <td style="color: #232534; font-weight: 700;">{{ transaction.date | date: 'MMM dd yyyy' }}</td>
+        <td style="color: #232534; font-weight: 700;">{{ transaction.name }}</td>
+        <td [ngClass]="getStatusClass(transaction.status)">
+          {{ transaction.status }}
+        </td>
+        <td style="color: #b0b4bd;">{{ transaction.type }}</td>
+        <td style="color: #b0b4bd;">{{ transaction.date | date: 'h:mm a' }}</td>
+        <td style="color: #232534; font-weight: 700;">{{ transaction.amount | currency }}</td>
+        <td (click)="openModel(transaction)"><img src="assets/images/more.svg" alt="More" style="cursor: pointer;"></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<button type="button" class="btn btn-primary" [hidden]="true" id="openPopup" data-bs-toggle="modal"
+  data-bs-target="#exampleModal"></button>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Transaction History</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <dl class="row">
+          <dt class="col-sm-4">Name:</dt>
+          <dd class="col-sm-8">{{popupData?.name}}</dd>
+          <dt class="col-sm-4">Status:</dt>
+          <dd class="col-sm-8">{{popupData?.status}}</dd>
+        </dl>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
